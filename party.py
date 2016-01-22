@@ -9,13 +9,40 @@ app.secret_key = "SECRETSECRETSECRET"
 
 
 def is_mel(name, email):
-    """Is this user Mel?"""
+    """Is this user Mel?
+
+    >>> is_mel("Mel Melitpolski", "mel@ubermelon.com")
+    True
+    
+    >>> is_mel("Al Melitpolski", "al@ubermelon.com")
+    False
+
+    >>> is_mel('Florence', 'mel@ubermelon.com')
+    True
+
+    >>> is_mel('Mel Melitpolski', 'joel@ubermelon.com')
+    True
+    """
 
     return name == "Mel Melitpolski" or email == "mel@ubermelon.com"
 
 
 def most_and_least_common_type(treats):
-    """Given list of treats, return {most, least} common types."""
+    """Given list of treats, return {most, least} common types.
+
+    Expected use case
+    >>> treats = [{'type': 'dessert'}, {'type': 'dessert'}, {'type': 'dessert'}, {'type': 'appetizer'}, {'type': 'appetizer'}, {'type': 'drink'}]
+   
+    >>> most_and_least_common_type(treats)
+    ('dessert', 'drink')
+
+
+    If only one type of food, should show as both most and least common types
+    >>> most_and_least_common_type([{'type': 'dessert'}])
+    ('dessert', 'dessert')
+
+
+    """
 
     types = {}
 
